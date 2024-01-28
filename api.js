@@ -1,6 +1,29 @@
-import { token } from "./config";
+import { token } from "./config.js";
 
 const URL = "https://striveschool-api.herokuapp.com/api/product/";
+
+export const deleteProduct = async (productId) => {
+  await fetch(URL + productId, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+      Authorization: token,
+    },
+  });
+};
+
+export const modifyProduct = async (product) => {
+  const response = await fetch(URL + product._id, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify(product),
+  });
+  const data = await response.json();
+  console.log(data);
+};
 
 export const addProduct = async (dataItem) => {
   const response = await fetch(URL, {
@@ -12,7 +35,7 @@ export const addProduct = async (dataItem) => {
     body: JSON.stringify(dataItem),
   });
   const data = await response.json();
-  console.log(data);
+  return data;
 };
 
 export const getProducts = async () => {
