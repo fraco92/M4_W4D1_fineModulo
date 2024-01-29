@@ -16,6 +16,16 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script
+      defer
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script defer src="./backoffice.js" type="module"></script>
   </head>
   <body>
@@ -24,7 +34,10 @@
         <span class="navbar-brand mb-0 h1">Marketplace - Items management</span>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="./index.html" class="nav-link">Shopping page</a>
+            <a href="./index.html" class="nav-link"
+              ><ion-icon name="arrow-redo" class="me-1"></ion-icon>Shopping
+              page</a
+            >
           </li>
         </ul>
       </div>
@@ -71,7 +84,7 @@
           </form>
         </div>
         <button id="addButton" type="button" class="btn btn-dark me-1">
-          Add
+          <ion-icon name="add-outline"></ion-icon>
         </button>
       </div>
 

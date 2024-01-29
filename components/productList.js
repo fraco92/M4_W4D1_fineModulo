@@ -15,7 +15,7 @@ export const productsList = (data) => {
   </button>
 
   <div class="modal" id="modifyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="ModalLabel">Modify info product</h1>
@@ -27,7 +27,7 @@ export const productsList = (data) => {
   </div>
 
   <button id="delete-${product._id}" type="button" class="btn btn-danger">
-  Delete
+  <ion-icon name="trash"></ion-icon>
   </button>
   </td>
 </tr>`;

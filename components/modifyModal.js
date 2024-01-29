@@ -3,7 +3,7 @@ export const modifyModal = (product) => {
   <form class="d-flex" role="search">
   <input
     id="modify-name-input"
-    class="form-control me-2"
+    class="form-floating me-2"
     type="text"
     placeholder="Item name"
     aria-label="Search"
