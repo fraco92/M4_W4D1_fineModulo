@@ -1,13 +1,13 @@
 import { getProducts } from "./api.js";
 
-const displayCards = async () => {
+const displayProductDetail = async () => {
   try {
     const cardContainer = document.getElementById("card-container");
-    const products = await getProducts();
+    const product = await getProducts();
     cardContainer.innerHTML = "";
-    console.log(products);
+    console.log(product);
 
-    products.forEach((product) => {
+    product.forEach((product) => {
       cardContainer.innerHTML += `
         <div class="col">
           <div class="card" style="width: 18rem">
@@ -18,12 +18,12 @@ const displayCards = async () => {
             />
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
-              <h6 class="card-text">
-                ${product.brand}
-              </h6>
+              <p class="card-text text-truncate">
+                ${product.description}
+              </p>
               <p class="card-text">${product.price} €</p>
               <a href="detailProduct.html?id=${product._id}" class="btn btn-primary">Details</a>
-              <a href="#" class="btn btn-danger">Buy</a>
+              <a href="#" class="btn btn-primary">Buy</a>
             </div>
           </div>
         </div>`;
@@ -32,4 +32,4 @@ const displayCards = async () => {
     console.error(error);
   }
 };
-displayCards();
+displayProductDetail();
