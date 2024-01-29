@@ -18,7 +18,7 @@ const displayCards = async () => {
             />
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
-              <p class="card-text">
+              <p class="card-text text-truncate">
                 ${product.description}
               </p>
               <p class="card-text">${product.price} €</p>

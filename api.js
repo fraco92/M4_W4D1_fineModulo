@@ -22,7 +22,6 @@ export const modifyProduct = async (product) => {
     body: JSON.stringify(product),
   });
   const data = await response.json();
-  console.log(data);
 };
 
 export const addProduct = async (dataItem) => {

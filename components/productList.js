@@ -8,23 +8,17 @@ export const productsList = (data) => {
   <td>${product._id}</td>
   <td>${product.name}</td>
   <td>${product.brand}</td>
-  <td>${product.price}</td>
+  <td>${product.price.toFixed(2)}</td>
   <td>
-  <button id="modifyButton" type="button" class="btn btn-dark me-1" data-bs-toggle="modal" data-bs-target="#modifyModal">
+  <button id="modifyButton" type="button" class="btn btn-dark me-1" data-bs-toggle="modal" data-bs-target="#modifyModal-${
+    product._id
+  }">
   Modify
   </button>
 
-  <div class="modal" id="modifyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="ModalLabel">Modify info product</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+
           ${modifyModal(product)}
-     </div>
-    </div>
-  </div>
+
 
   <button id="delete-${product._id}" type="button" class="btn btn-danger">
   <ion-icon name="trash"></ion-icon>

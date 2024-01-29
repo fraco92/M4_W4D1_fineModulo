@@ -51,11 +51,14 @@ const displayProducts = (products) => {
 
     if (saveButton) {
       saveButton.addEventListener("click", () => {
-        const modifiedProduct = getModifiedProduct();
+        const modifiedProduct = getModifiedProduct(product._id);
         modifiedProduct._id = product._id;
         modifyProduct(modifiedProduct);
         products[index] = modifiedProduct;
         displayProducts(products);
+
+        const backdropElement = document.querySelector(".modal-backdrop");
+        backdropElement.parentNode.removeChild(backdropElement);
       });
     }
   });
