@@ -46,3 +46,13 @@ export const getProducts = async () => {
   });
   return await response.json();
 };
+
+export const getProductDetail = async (productId) => {
+  const response = await fetch(URL + productId, {
+    method: "GET",
+    headers: {
+      Authorization: token,
+    },
+  });
+  return await response.json();
+};
